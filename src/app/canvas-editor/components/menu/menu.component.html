@@ -1,0 +1,15 @@
+<div class="menu-items" fxLayoutAlign="center " fxLayoutGap="20px" appearance="outline">
+    <mat-list>
+        <mat-list-item *ngFor="let menuItem of menuList;index as i" matTooltip="{{menuItem.name}}" class="cp"
+            [class.active]="menuItem.isActive" (click)="setActiveMenu(i)">
+            <mat-icon> {{menuItem.icon}}</mat-icon>
+        </mat-list-item>
+    </mat-list>
+</div>
+<div class="menu-items-container" fxFlex="80">
+    <templates *ngIf="activeMenuItem==='Templates'"></templates>
+    <images *ngIf="activeMenuItem==='Images'"></images>
+    <shapes *ngIf="activeMenuItem==='Shapes'"></shapes>
+    <text *ngIf="activeMenuItem==='Text'"></text>
+    <backgrounds *ngIf="activeMenuItem==='Backgrounds'"></backgrounds>
+</div>

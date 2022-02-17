@@ -1,0 +1,23 @@
+mat-list {
+  padding: 0px;
+}
+.menu-items {
+  background-color: #b6b2b2;
+  height: 100vh;
+}
+mat-icon {
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
+}
+mat-list-item {
+  padding: 20px !important;
+  width: fit-content !important;
+  /* margin-top: 20px; */
+}
+/* mat-list-item span {
+  margin: 40px;
+} */
+.active {
+  background-color: white;
+}

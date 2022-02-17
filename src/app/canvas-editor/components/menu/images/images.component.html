@@ -1,0 +1,22 @@
+<div class="image-container" fxLayout="row wrap" fxLayoutAlign="">
+    <!-- <input type="file" class="file-upload" onchange="console.log(event.target.files)">
+    <div class="upload-section mt-20 mb-20" fxLayoutAlign="center" fxFlex="100%">
+        <button mat-raised-button color="primary" (click)="uploadImage()">upload Image</button>
+    </div>
+    <div class="image-item-container">test</div> -->
+
+
+    <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+
+    <div class="file-upload">
+
+        {{fileName || "No file uploaded yet."}}
+        <button mat-mini-fab color="primary" class="upload-btn" (click)="fileUpload.click()">
+            <mat-icon>attach_file</mat-icon>
+        </button>
+    </div>
+
+    <div class="image-item-container" fxLayout="row wrap">
+        <img [src]="files" alt="" fxFlex="50%">
+    </div>
+</div>

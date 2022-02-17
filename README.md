@@ -1,6 +1,6 @@
 # Html5 Canvas Editor with Fabricjs and Angular
 
-I used Html5 Canvas with [fabric.js](http://fabricjs.com) in [angular](https://angular.io/) to create a nice card editor.
+This project used Html5 Canvas with [fabric.js](http://fabricjs.com) in [angular](https://angular.io/) to create a nice card editor.
 
 ## Used Technologies
 

@@ -6,7 +6,7 @@ import { fabric } from 'fabric';
 
 @Injectable({ providedIn: 'root' })
 export class FabricService {
-  protected _canvas?: fabric.Canvas;
+  _canvas?: fabric.Canvas;
   constructor() {}
 
   // this._canvas.on('mouse:down',function(event){
@@ -20,17 +20,33 @@ export class FabricService {
     if (this._canvas) {
     }
   }
+  addText(text: string, options: any) {
+    let canvas = this?._canvas;
+
+    let textObj = new fabric.IText(text, options);
+    textObj = this.setOnCanvasCenter(textObj);
+
+    canvas?.add(textObj);
+  }
+  setOnCanvasCenter(obj: any): any {
+    let canvas = this?._canvas;
+    let width = canvas?.width;
+    let height = canvas?.height;
+    return obj.set({
+      left: (width ? width : 600) / 2,
+      top: (height ? height : 600) / 2,
+      originX: 'center',
+      originY: 'center',
+    });
+  }
   addSvg(url: string): void {
-    // fabric.loadSVGFromURL(url, function (objects) {
-    //   var group = new fabric.PathGroup(objects, {
-    //     left: 165,
-    //     top: 100,
-    //     width: 295,
-    //     height: 211,
-    //   });
-    //   this._canvas?.add(group);
-    //   this._canvas?.renderAll();
-    // });
+    fabric.loadSVGFromURL(url, (objects, options) => {
+      let obj = fabric.util.groupSVGElements(objects, options);
+      obj.scale(0.5);
+      this._canvas?.add(obj);
+      this._canvas?.renderAll();
+      console.log(obj);
+    });
   }
   addImage(url: string) {
     console.log({ url });

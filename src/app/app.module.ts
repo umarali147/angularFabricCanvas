@@ -17,11 +17,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatCardModule } from '@angular/material/card';
 import { TextComponent } from './canvas-editor/components/menu/text/text.component';
 import { TemplatesComponent } from './canvas-editor/components/menu/templates/templates.component';
 import { ImagesComponent } from './canvas-editor/components/menu/images/images.component';
 import { ShapesComponent } from './canvas-editor/components/menu/shapes/shapes.component';
 import { BackgroundsComponent } from './canvas-editor/components/menu/backgrounds/backgrounds.component';
+import { ToolbarComponent } from './canvas-editor/components/main/toolbar/toolbar.component';
+import { CanvasContainerComponent } from './canvas-editor/components/main/canvas-container/canvas-container.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,8 @@ import { BackgroundsComponent } from './canvas-editor/components/menu/background
     ImagesComponent,
     ShapesComponent,
     BackgroundsComponent,
+    ToolbarComponent,
+    CanvasContainerComponent,
   ],
   imports: [
     FlexLayoutModule,
@@ -46,6 +51,7 @@ import { BackgroundsComponent } from './canvas-editor/components/menu/background
     MatGridListModule,
     MatDividerModule,
     MatButtonModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

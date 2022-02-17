@@ -1,0 +1,17 @@
+.heading-section > div {
+  background-color: #f5f5f5;
+  margin-bottom: 10px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.heading {
+  font-size: 32px;
+  font-weight: bold;
+}
+.subheading {
+  font-size: 24px;
+  font-weight: bold;
+}
+.body-text {
+  font-size: 18;
+}

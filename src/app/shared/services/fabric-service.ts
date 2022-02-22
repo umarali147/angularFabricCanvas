@@ -28,6 +28,14 @@ export class FabricService {
 
     canvas?.add(textObj);
   }
+  setText(action: string): void {
+    let canvas = this?._canvas;
+    let obj: any = canvas?.getActiveObject();
+    if (obj) {
+      obj.set('fontWeight', action);
+    }
+    canvas?.renderAll();
+  }
   setOnCanvasCenter(obj: any): any {
     let canvas = this?._canvas;
     let width = canvas?.width;
@@ -63,5 +71,10 @@ export class FabricService {
       color,
       this._canvas.renderAll.bind(this._canvas)
     );
+  }
+
+  // canvas related function
+  download(): void {
+    console.log(this._canvas?.toDataURL());
   }
 }
